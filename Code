@@ -1,0 +1,30 @@
+game.Players.PlayerAdded:Connect(function(player)
+
+    player.Chatted:Connect(function(message)
+
+        local prefix = "reset "
+
+        if message:sub(1, #prefix) == prefix then
+
+            local targetName = message:sub(#prefix + 1)
+
+            if targetName == player.Name then
+
+                return
+
+            end
+
+            local targetPlayer = game.Players:FindFirstChild(targetName)
+
+            if targetPlayer and player.Name == "bunnyswopper12" then
+
+                targetPlayer:LoadCharacter()
+
+            end
+
+        end
+
+    end)
+
+end)
+
